@@ -23,13 +23,79 @@ const Navbar = () => {
               </a>
             </li>
             <li>
+              <a href={`/${menuName}/addproduct`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                Add products
+              </a>
+            </li>
+            <li>
               <a href={`/${menuName}/editProduct`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
                 Edit Product Details
               </a>
             </li>
             <li>
-              <a href={`/${menuName}/option3`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
-                Option 3
+              <a href={`/${menuName}/deleteProduct`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                Delete Product 
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/viewsuppliers`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                ViewSuppliers 
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/addsupplier`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                AddSupplier
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/editsupplier`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                EditSupplier
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/deletesupplier`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                DeleteSupplier
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/vieworders`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                ViewOrders
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/createorder`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                CreateOrder
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/editorder`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                EditOrder
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/deleteorder`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                DeleteOrder
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/checkinventory`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                CheckInventory
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/addinventory`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                AddInventory
+              </a>
+            </li>
+            <li>
+              <a href={`/${menuName}/updateinventory`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                UpdateInventory
+              </a>
+            </li>
+            
+            <li>
+              <a href={`/${menuName}/deleteinventory`} className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-700 text-sm">
+                DeleteInventory
               </a>
             </li>
             <li>
@@ -39,6 +105,10 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+
+
+
+
       );
     }
     return null;

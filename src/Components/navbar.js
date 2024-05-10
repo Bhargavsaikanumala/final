@@ -31,7 +31,11 @@ const Navbar = () => {
         <div ref={submenuRef} className="absolute bg-gray-800 rounded-md shadow-lg">
           <div className="pt-2 w-48 h-fit">
             {subMenuOptions.map((option, index) => (
-              <Link key={index} to={`/product/${option.toLowerCase().replace(/\s/g, '-')}`} className="block px-4 py-3 text-white hover:bg-gray-700">
+              <Link
+                key={index}
+                to={`/${menuName.toLowerCase()}/${option.toLowerCase().replace(/\s/g, '-')}`}
+                className="block px-4 py-3 text-white hover:bg-gray-700"
+              >
                 {option}
               </Link>
             ))}
@@ -41,7 +45,7 @@ const Navbar = () => {
     }
     return null;
   };
-
+  
   return (
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,10 +62,9 @@ const Navbar = () => {
                 <a href="/" className="text-white hover:bg-gray-700 hover:text-white px-4 py-3 rounded-md text-sm font-medium" onClick={(e) => handleMenuClick('home', e)}>
                   Home
                 </a>
-                
               </div>
               <div className="relative">
-                <a href="/product" className="text-white hover:bg-gray-700 hover:text-white px-4 py-3 rounded-md text-sm font-medium" onClick={(e) => handleMenuClick('product', e)}>
+                <a href="/products" className="text-white hover:bg-gray-700 hover:text-white px-4 py-3 rounded-md text-sm font-medium" onClick={(e) => handleMenuClick('product', e)}>
                   Products
                 </a>
                 {renderSubMenu('product', ['View Products', 'Add Product', 'Edit Product', 'Delete Product'])}
@@ -90,6 +93,7 @@ const Navbar = () => {
       </div>
     </nav>
   );
+  
 };
 
 export default Navbar;

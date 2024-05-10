@@ -11,52 +11,30 @@ import Footer from '../Components/footer';
 import Navbar from '../Components/navbar';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
-  {
-    id: 'population',
-    label: 'Population',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'density',
-    label: 'Density',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
+  { id: 'productId', label: 'Product ID', minWidth: 170 },
+  { id: 'supplierId', label: 'Supplier ID', minWidth: 100 },
+  { id: 'productName', label: 'Product Name', minWidth: 170 },
+  { id: 'description', label: 'Description', minWidth: 170 },
+  { id: 'category', label: 'Category', minWidth: 170 },
+  { id: 'unitPrice', label: 'Unit Price', minWidth: 170 },
+  { id: 'reorderLevel', label: 'Reorder Level', minWidth: 170 },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
+function createData(productId, supplierId, productName, description, category, unitPrice, reorderLevel) {
+  return { productId, supplierId, productName, description, category, unitPrice, reorderLevel };
 }
 
 const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
+  createData(1, 101, 'Paracetamol', 'Pain reliever', 'Medicine', 5.99, 50),
+  createData(2, 102, 'Aspirin', 'Anti-inflammatory', 'Medicine', 3.99, 40),
+  createData(3, 103, 'Ibuprofen', 'Pain reliever', 'Medicine', 4.99, 60),
+  createData(4, 104, 'Amoxicillin', 'Antibiotic', 'Medicine', 8.99, 30),
+  createData(5, 105, 'Omeprazole', 'Heartburn relief', 'Medicine', 6.99, 45),
+  createData(6, 106, 'Atorvastatin', 'Cholesterol management', 'Medicine', 9.99, 55),
+  createData(7, 107, 'Metformin', 'Diabetes management', 'Medicine', 7.99, 35),
+  createData(8, 108, 'Losartan', 'Blood pressure control', 'Medicine', 6.49, 48),
+  createData(9, 109, 'Lisinopril', 'Blood pressure control', 'Medicine', 5.49, 42),
+  createData(10, 110, 'Amlodipine', 'Blood pressure control', 'Medicine', 7.49, 47),
 ];
 
 function StickyHeadTable() {
@@ -74,7 +52,6 @@ function StickyHeadTable() {
 
   return (
     <div>
-        
      <Navbar />
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -97,7 +74,7 @@ function StickyHeadTable() {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.productId}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
